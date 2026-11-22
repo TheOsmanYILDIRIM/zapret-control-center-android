@@ -1,0 +1,1 @@
+Temporary CI trigger for Turkish APK verification on 2026-11-22.
