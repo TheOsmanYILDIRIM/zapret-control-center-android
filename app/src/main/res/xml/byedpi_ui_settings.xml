@@ -46,6 +46,21 @@
     </androidx.preference.PreferenceCategory>
 
     <androidx.preference.PreferenceCategory
+        android:title="@string/turkey_lists_category">
+
+        <Preference
+            android:key="turkey_target_hosts"
+            android:title="@string/turkey_target_hosts_apply"
+            android:summary="@string/turkey_target_hosts_summary" />
+
+        <Preference
+            android:key="turkey_exclude_hosts"
+            android:title="@string/turkey_exclude_hosts_apply"
+            android:summary="@string/turkey_exclude_hosts_summary" />
+
+    </androidx.preference.PreferenceCategory>
+
+    <androidx.preference.PreferenceCategory
         android:title="@string/byedpi_desync">
 
         <DropDownPreference

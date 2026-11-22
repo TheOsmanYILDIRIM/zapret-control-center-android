@@ -44,3 +44,40 @@ Zapret Mobile является форком открытого проекта [B
 2. обновить таблицу и зафиксированный идентификатор версии;
 3. убедиться, что обязательные тексты лицензий доступны вместе с исходниками и выпуском;
 4. не удалять уведомления исходных авторов.
+
+## Списки доменов для Турции
+
+В сборку добавлены два локальных списка, применяемых только по явному выбору пользователя в расширенных параметрах ByeDPI:
+
+- `app/src/main/assets/turkey-target-hosts.txt` — объединённый список актуальных целей для Турции. Основа: Discord, Roblox, Wattpad и Pastebin из данных пресетов [SplitDPI](https://github.com/KadirBerkpolat1/SplitDPI) на ревизии `d610d46ef336b3edf9cc163a4835d3ef26a5d4b2`, дополненная текущим `proxytest_türkiye.sites` из [ByeByeDPI](https://github.com/romanvht/ByeByeDPI) на ревизии `ee87264e3bab779d3c23e41e11c45d5f8189faec`.
+- `app/src/main/assets/turkey-exclude-hosts.txt` — локальные банковские, государственные, образовательные и сервисные домены, которые не следует отправлять через десинхронизацию; источник: `internal/presets/data/exclude/tr.txt` из SplitDPI, та же ревизия.
+- Снимок интеграции: 2026-11-22. Блокировки и рабочие стратегии зависят от провайдера, поэтому эти списки не являются гарантией доступности конкретного сервиса.
+
+Данные пресетов SplitDPI распространяются по MIT License:
+
+```text
+MIT License
+
+Copyright (c) 2026 KADIR BERK POLAT
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+ByeByeDPI распространяется по GNU GPL v3, совместимой с лицензией этого репозитория; исходная ревизия и авторство указаны выше.
+

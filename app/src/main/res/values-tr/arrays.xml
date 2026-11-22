@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tunnel_mtu_values">
+        <item>1500</item><item>1400</item><item>1280</item>
+    </string-array>
+    <array name="themes">
+        <item name="system">Sistem</item><item name="light">Açık</item><item name="dark">Koyu</item>
+    </array>
+    <array name="themes_entries">
+        <item name="system">system</item><item name="light">light</item><item name="dark">dark</item>
+    </array>
+    <array name="byedpi_modes">
+        <item name="vpn">VPN</item><item name="proxy">Yerel proxy</item>
+    </array>
+    <array name="byedpi_modes_entries">
+        <item name="vpn">vpn</item><item name="proxy">proxy</item>
+    </array>
+    <array name="byedpi_desync_methods">
+        <item name="none">Yok</item><item name="split">Bölme</item><item name="disorder">Sıra değiştirme</item><item name="fake">Sahte paket</item><item name="oob">Bant dışı (OOB)</item><item name="disoob">Sıra değiştirmeli OOB</item>
+    </array>
+    <array name="byedpi_desync_methods_entries">
+        <item name="none">none</item><item name="split">split</item><item name="disorder">disorder</item><item name="fake">fake</item><item name="oob">oob</item><item name="disoob">disoob</item>
+    </array>
+    <array name="byedpi_hosts_modes">
+        <item name="disable">Kapalı</item><item name="blacklist">Yalnız seçili siteler</item><item name="whitelist">İstisnalar hariç tümü</item>
+    </array>
+    <array name="byedpi_hosts_modes_entries">
+        <item name="disable">disable</item><item name="blacklist">blacklist</item><item name="whitelist">whitelist</item>
+    </array>
+</resources>

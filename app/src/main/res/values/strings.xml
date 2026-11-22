@@ -222,4 +222,13 @@
     <string name="update_retry">Повторить</string>
     <string name="update_channel_failed">Не удалось открыть канал</string>
     <string name="update_debug_build">Обновление доступно только в релизной сборке</string>
+
+    <string name="turkey_lists_category">Списки для Турции</string>
+    <string name="turkey_target_hosts_apply">Применить список целей для Турции</string>
+    <string name="turkey_target_hosts_summary">Настроить Discord, Roblox, Wattpad и актуальные цели сообщества как обрабатываемые сайты.</string>
+    <string name="turkey_exclude_hosts_apply">Применить список исключений для Турции</string>
+    <string name="turkey_exclude_hosts_summary">Исключить из десинхронизации банки, государственные, образовательные и локальные сервисы.</string>
+    <string name="turkey_target_hosts_applied">Список целей для Турции применён</string>
+    <string name="turkey_exclude_hosts_applied">Список исключений для Турции применён</string>
+
 </resources>

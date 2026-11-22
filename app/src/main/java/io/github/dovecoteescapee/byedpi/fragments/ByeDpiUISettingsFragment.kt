@@ -2,6 +2,7 @@ package io.github.dovecoteescapee.byedpi.fragments
 
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.widget.Toast
 import androidx.preference.*
 import io.github.dovecoteescapee.byedpi.R
 import io.github.dovecoteescapee.byedpi.core.ByeDpiProxyUIPreferences
@@ -49,6 +50,27 @@ class ByeDpiUISettingsFragment : PreferenceFragmentCompat() {
                 it.filters = arrayOf(android.text.InputFilter.LengthFilter(1))
             }
 
+        findPreferenceNotNull<Preference>("turkey_target_hosts")
+            .setOnPreferenceClickListener {
+                applyBundledHosts(
+                    assetName = "turkey-target-hosts.txt",
+                    hostsMode = "blacklist",
+                    preferenceKey = "byedpi_hosts_blacklist",
+                    message = R.string.turkey_target_hosts_applied,
+                )
+                true
+            }
+        findPreferenceNotNull<Preference>("turkey_exclude_hosts")
+            .setOnPreferenceClickListener {
+                applyBundledHosts(
+                    assetName = "turkey-exclude-hosts.txt",
+                    hostsMode = "whitelist",
+                    preferenceKey = "byedpi_hosts_whitelist",
+                    message = R.string.turkey_exclude_hosts_applied,
+                )
+                true
+            }
+
         updatePreferences()
     }
 
@@ -60,6 +82,26 @@ class ByeDpiUISettingsFragment : PreferenceFragmentCompat() {
     override fun onPause() {
         super.onPause()
         sharedPreferences?.unregisterOnSharedPreferenceChangeListener(preferenceListener)
+    }
+
+    private fun applyBundledHosts(
+        assetName: String,
+        hostsMode: String,
+        preferenceKey: String,
+        message: Int,
+    ) {
+        val hosts = requireContext().assets.open(assetName)
+            .bufferedReader(Charsets.UTF_8)
+            .use { it.readText().trim() }
+        require(hosts.isNotEmpty()) { "Bundled Turkey host list is empty: $assetName" }
+
+        checkNotNull(sharedPreferences).edit()
+            .putString("byedpi_hosts_mode", hostsMode)
+            .putString(preferenceKey, hosts)
+            .apply()
+
+        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
+        updatePreferences()
     }
 
     private fun updatePreferences() {
